@@ -110,3 +110,9 @@ text {
     -o-user-select: none;
     -user-select: none;
 }
+
+@media print {
+    .no-print {
+        display: none !important;
+    }
+}
