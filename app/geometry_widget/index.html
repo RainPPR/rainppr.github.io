@@ -1,0 +1,98 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CS Academy</title>
+    <meta charset="utf-8">
+    <meta name="description" content="CSAcademy is a next generation educational platform. Discover computer science
+    with interactive lessons and a seamless online code editor.">
+
+    <html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://ogp.me/ns/fb#"></html>
+    <meta property="og:image" content="/static/icon.png" />
+    <link rel="image_src" href="https://csacademy.com/static/icon.png" />
+    <link rel="icon" type="image/png" href="../../static/favicon.png">
+    <link rel="stylesheet" href="../../static/katex/katex.min.css">
+    <link rel="stylesheet" href="../../static/css/lato-font.css">
+    <link rel="stylesheet" href="../../static/css/ext/font-awesome.min.css">
+    <link rel="stylesheet" href="../../static/css/csacademy.css">
+
+    <script>
+        var JS_VERSION = 452;
+        var SERVER_PAGE_LOAD = 1728791110.4749022;
+        var SERVER_TIME_OFFSET = Date.now() / 1000.0 - SERVER_PAGE_LOAD;
+        var WEBSOCKET_URL = ["wss://ws2.csacademy.com", "wss://ws3.csacademy.com", "wss://ws1.csacademy.com"];
+        var USER = {"isAuthenticated": false};
+
+        // Really minimal AMD bundle support
+        function define(...args) {
+            // Bad polymorphism
+            let [func, dependencies, id] = args.reverse();
+            id = id || document.currentScript.getAttribute("src");
+
+            self.define.modules[id] = {
+                id,
+                func: typeof func === "function" ? func : () => func,
+                dependencies,
+            }
+        }
+
+        Object.assign(self.define, {
+            amd: {}, // Require to work with AMD modules
+            modules: {},
+        });
+
+        // Only supports the sync form
+        function require(id) {
+            const module = self.define.modules[id];
+
+            if (!module) {
+                console.error("Can't load file here, implement for", id);
+            }
+
+            if (module.exports) {
+                return module.exports;
+            }
+
+            module.exports = {};
+
+            const dependencies = module.dependencies.map((dep) => {
+                // Undo whatever relative path crap rollup did
+                const poz = dep.lastIndexOf("/");
+                if (poz >= 0) {
+                    dep = dep.substring(poz + 1);
+                }
+
+                if (dep === "module") {
+                    return module;
+                }
+
+                if (dep === "exports") {
+                    return module.exports;
+                }
+
+                return require(dep);
+            });
+
+            module.func(...dependencies);
+
+            return module.exports;
+        }
+    </script>
+
+    <script src="../../static/js/PublicState.js@v=452"></script>
+    <script src="../../static/js/EmojiMini.js@v=452"></script>
+    <script src="../../static/js/bundle.js@v=452"></script>
+</head>
+<body>
+<noscript>You have javascript turned off. Any functionality on our website needs javascript turned on.</noscript>
+
+<script>
+    Bundle = require("bundle");
+    self.GlobalState.importState({});
+    self.currentWidget = Bundle.CSAApp.create(document.body);
+</script>
+
+</body>
+</html>
