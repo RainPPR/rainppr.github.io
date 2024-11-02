@@ -96,6 +96,26 @@
 </script>
 
 <script defer>
+    $(".navManager-30").remove();
+    
+    $(".RadioButtonGroup-container-33>:eq(0)").html('无向图');
+    $(".RadioButtonGroup-container-33>:eq(1)").html('有向图');
+    
+    $(".RadioButtonGroup-container-33>:eq(2)").html('从 0 标号');
+    $(".RadioButtonGroup-container-33>:eq(3)").html('从 1 标号');
+    $(".RadioButtonGroup-container-33>:eq(4)").html('自定义标号');
+    
+    $(".RadioButtonGroup-container-33>:eq(5)").html('力');
+    $(".RadioButtonGroup-container-33>:eq(6)").html('绘制');
+    $(".RadioButtonGroup-container-33>:eq(7)").html('编辑');
+    $(".RadioButtonGroup-container-33>:eq(8)").html('删除');
+    $(".RadioButtonGroup-container-33>:eq(9)").html('设置');
+
+    $(".HORIZONTAL-38>:eq(0)").html('下载为 PNG 格式');
+    $(".HORIZONTAL-38>:eq(1)").remove();
+
+    $(".GlobalContainer-container-39>:eq(0)>:eq(0)>:eq(0)>:eq(0)").html($(".GlobalContainer-container-39>:eq(0)>:eq(0)>:eq(0)>:eq(0)").html().replace('Node Count:', '点数：'));
+    $(".GlobalContainer-container-39>:eq(0)>:eq(0)>:eq(0)>:eq(0)").html($(".GlobalContainer-container-39>:eq(0)>:eq(0)>:eq(0)>:eq(0)").html().replace('Graph Data:', '数据：'));
 </script>
 
 </body>
