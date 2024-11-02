@@ -113,6 +113,27 @@
 
     $(".HORIZONTAL-38>:eq(0)").html('下载为 PNG 格式');
     $(".HORIZONTAL-38>:eq(1)").remove();
+
+    $('.text-center+div label:eq(0)').html('节点：');
+    $('.text-center+div label:eq(1)').html('数据：');
+
+    $('.text-center+div:eq(2) div:eq(0)').html('<h4>力模式</h4><p>在此模式下，节点受到重力的作用，保持在绘图区域的中心。此外，节点之间会相互施加力，使整个图形看起来和表现得像空间中的真实物体。</p><p>您可以与图形进行的交互方式：</p><ul><li>节点支持拖放。</li><li>拖放结束后，节点会变为固定状态。</li><li>您可以通过简单点击来固定/解固定节点。</li></ul>');
+    $('.text-center+div:eq(2) div:eq(1)').html('<h4>绘制模式</h4><p>该模式允许您绘制新的节点和/或边。</p><p>您可以与图形进行的交互方式：</p><ul><li>在图形画布上的任何地方点击会创建一个新的节点。</li><li>点击一个节点会开始绘制新边的过程。</li><li>要取消新边，请在画布上的任何地方点击。</li><li>要完成绘制边，请点击所需的邻居。</li></ul>');
+    $('.text-center+div:eq(2) div:eq(2)').html('<h4>编辑模式</h4><p>该模式允许您编辑节点的标签和边的成本。</p><p>您可以与图形进行的交互方式：</p><ul><li>点击节点标签以更改它。现在您可以开始输入以编辑标签。点击任何地方或按回车键以完成编辑。</li><li>点击边以更改其成本。现在您可以开始输入以编辑成本。点击任何地方或按回车键以完成编辑。</li></ul>');
+    $('.text-center+div:eq(2) div:eq(3)').html('<h4>删除模式</h4><p>该模式允许您删除节点和/或边。</p><p>您可以与图形进行的交互方式：</p><ul><li>点击节点以删除它。</li><li>点击边以删除它。</li></ul>');
+
+    $('.fa-question-circle:eq(0)').next().html('节点半径：');
+    $('.fa-question-circle:eq(1)').next().html('边的理想长度：');
+    
+    $('.inputElement-34:eq(3)').prev().html('背景颜色：');
+    $('.inputElement-34:eq(4)').prev().html('节点颜色：');
+    $('.inputElement-34:eq(5)').prev().html('边的颜色：');
+    $('.select-36').html('<option>白色</option><option>红色</option><option>蓝色</option><option>黑色</option><option>紫色</option><option>橙色</option><option>绿色</option>');
+
+    $('.Button-container-31:eq(10)').html('执行命令');
+    $('.default-35>:eq(0)').html('固定所有节点');
+    $('.default-35>:eq(1)').html('解固定所有节点');
+    $('.default-35>:eq(2)').html('排列为树形');
 </script>
 
 </body>
