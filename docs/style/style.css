@@ -8,7 +8,6 @@
     --footer-color-light: #d1d1d1;
     --card-background-light: #fff;
     --card-border-light: #ddd;
-    --card-text-light: #000;
 
     /* 暗模式 */
     --theme-color-dark: #333;
@@ -18,7 +17,6 @@
     --footer-color-dark: #222;
     --card-background-dark: #444;
     --card-border-dark: #666;
-    --card-text-dark: #fff;
 }
 
 /* 页面基础样式 */
@@ -28,6 +26,7 @@ body {
         "Noto Sans CJK", "Source Han Sans", "PingFang SC", "Segoe UI",
         "Microsoft YaHei", sans-serif;
     background-color: var(--theme-color-light);
+    color: var(--text-color-light);
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
@@ -36,6 +35,7 @@ body {
 /* 添加暗模式 */
 body.darkMode {
     background-color: var(--theme-color-dark);
+    color: var(--text-color-dark);
 }
 
 /* 页首样式 */
@@ -51,6 +51,7 @@ header {
     align-items: center;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* 暗模式页首 */
@@ -86,7 +87,7 @@ header .headerButton {
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    transition: background-color 0.3s;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 header .headerButton:hover {
@@ -108,27 +109,28 @@ section {
     justify-content: space-between;
 }
 
-.mainContent a {
+.contentCard a {
     color: var(--text-color-light);
+    transition: background-color 0.3s, color 0.3s;
 }
 
-.mainContent a:hover {
+.contentCard a:hover {
     color: var(--highlight-color-light);
 }
 
-.mainContent a:active {
+.contentCard a:active {
     color: var(--text-color-light);
 }
 
-.darkMode .mainContent a {
+.darkMode .contentCard a {
     color: var(--text-color-dark);
 }
 
-.darkMode .mainContent a:hover {
+.darkMode .contentCard a:hover {
     color: var(--highlight-color-dark);
 }
 
-.darkMode .mainContent a:active {
+.darkMode .contentCard a:active {
     color: var(--text-color-dark);
 }
 
@@ -138,15 +140,13 @@ section {
     border: 1px solid var(--card-border-light);
     border-radius: 8px;
     margin-bottom: 20px;
-    color: var(--card-text-light);
-    transition: all 0.3s ease;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* 暗模式内容卡片 */
 .darkMode .contentCard {
     background-color: var(--card-background-dark);
     border-color: var(--card-border-dark);
-    color: var(--card-text-dark);
 }
 
 .contentCard h3 {
@@ -167,6 +167,7 @@ footer {
     justify-content: space-between;
     align-items: center;
     box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
 }
 
 /* 暗模式页脚 */
