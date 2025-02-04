@@ -2,8 +2,8 @@
 :root {
     /* 亮模式 */
     --theme-color-light: #f4f4f4;
-    --text-color-light: #000;
-    --highlight-color-light: #444;
+    --text-color-light: #000; /* 不要为除了 .mainContent a 以外的使用 */
+    --highlight-color-light: #666;
     --header-color-light: #d1d1d1;
     --footer-color-light: #d1d1d1;
     --card-background-light: #fff;
@@ -12,7 +12,7 @@
 
     /* 暗模式 */
     --theme-color-dark: #333;
-    --text-color-dark: #fff;
+    --text-color-dark: #fff; /* 不要为除了 .mainContent a 以外的使用 */
     --highlight-color-dark: #ddd;
     --header-color-dark: #222;
     --footer-color-dark: #222;
@@ -28,7 +28,6 @@ body {
         "Noto Sans CJK", "Source Han Sans", "PingFang SC", "Segoe UI",
         "Microsoft YaHei", sans-serif;
     background-color: var(--theme-color-light);
-    color: var(--text-color-light);
     margin: 0;
     padding: 0;
     transition: background-color 0.3s, color 0.3s;
@@ -37,7 +36,6 @@ body {
 /* 添加暗模式 */
 body.darkMode {
     background-color: var(--theme-color-dark);
-    color: var(--text-color-dark);
 }
 
 /* 页首样式 */
@@ -63,9 +61,9 @@ header {
 /* 页首标题样式 */
 header .headerTitle {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-size: 1.6rem;
     font-weight: bold;
     white-space: nowrap; /* 禁止换行 */
@@ -80,7 +78,6 @@ header .headerButtons {
 
 header .headerButton {
     background-color: rgba(255, 255, 255, 0.2);
-    color: var(--text-color-light);
     border: none;
     border-radius: 30%;
     width: 40px;
@@ -94,10 +91,6 @@ header .headerButton {
 
 header .headerButton:hover {
     background-color: rgba(255, 255, 255, 0.4);
-}
-
-.darkMode header .headerButton {
-    color: var(--text-color-dark);
 }
 
 /* 正文内容样式 */
@@ -119,11 +112,11 @@ section {
     color: var(--text-color-light);
 }
 
-a:hover {
+.mainContent a:hover {
     color: var(--highlight-color-light);
 }
 
-a:active {
+.mainContent a:active {
     color: var(--text-color-light);
 }
 
@@ -131,11 +124,11 @@ a:active {
     color: var(--text-color-dark);
 }
 
-.darkMode a:hover {
+.darkMode .mainContent a:hover {
     color: var(--highlight-color-dark);
 }
 
-.darkMode a:active {
+.darkMode .mainContent a:active {
     color: var(--text-color-dark);
 }
 
@@ -184,9 +177,9 @@ footer {
 footer .footerLeft,
 footer .footerRight {
     -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     font-size: 0.9rem;
     white-space: nowrap;
     overflow: hidden;
