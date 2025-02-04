@@ -1,0 +1,183 @@
+/* 定义暗亮模式的颜色变量 */
+:root {
+    /* 亮模式 */
+    --theme-color-light: #f4f4f4;
+    --text-color-light: #000;
+    --header-color-light: #d1d1d1;
+    --footer-color-light: #d1d1d1;
+    --card-background-light: #fff;
+    --card-border-light: #ddd;
+    --card-text-light: #000;
+    --highlight-color-light: #8b0000;
+
+    /* 暗模式 */
+    --theme-color-dark: #333;
+    --text-color-dark: #fff;
+    --header-color-dark: #222;
+    --footer-color-dark: #222;
+    --card-background-dark: #444;
+    --card-border-dark: #666;
+    --card-text-dark: #fff;
+    --highlight-color-dark: #ff69b4;
+}
+
+/* 页面基础样式 */
+body {
+    font-family: "Noto Sans SC", -apple-system, BlinkMacSystemFont,
+        "San Francisco", "Helvetica Neue", "Noto Sans", "Noto Sans CJK SC",
+        "Noto Sans CJK", "Source Han Sans", "PingFang SC", "Segoe UI",
+        "Microsoft YaHei", sans-serif;
+    background-color: var(--theme-color-light);
+    color: var(--text-color-light);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* 添加暗模式 */
+body.darkMode {
+    background-color: var(--theme-color-dark);
+    color: var(--text-color-dark);
+}
+
+/* 页首样式 */
+header {
+    background-color: var(--header-color-light);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+/* 暗模式页首 */
+.darkMode header {
+    background-color: var(--header-color-dark);
+}
+
+/* 页首标题样式 */
+header .headerTitle {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    font-size: 1.6rem;
+    font-weight: bold;
+    white-space: nowrap; /* 禁止换行 */
+    overflow: hidden; /* 隐藏溢出部分 */
+    text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+
+header .headerButtons {
+    display: flex;
+    gap: 15px;
+}
+
+header .headerButton {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: var(--text-color-light);
+    border: none;
+    border-radius: 30%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+header .headerButton:hover {
+    background-color: rgba(255, 255, 255, 0.4);
+}
+
+.darkMode header .headerButton {
+    color: var(--text-color-dark);
+}
+
+/* 正文内容样式 */
+section {
+    padding: 20px;
+    margin-top: 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.mainContent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.contentCard {
+    padding: 20px;
+    background-color: var(--card-background-light);
+    border: 1px solid var(--card-border-light);
+    border-radius: 8px;
+    margin-bottom: 20px;
+    color: var(--card-text-light);
+    transition: all 0.3s ease;
+}
+
+/* 暗模式内容卡片 */
+.darkMode .contentCard {
+    background-color: var(--card-background-dark);
+    border-color: var(--card-border-dark);
+    color: var(--card-text-dark);
+}
+
+.contentCard h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* 页脚样式 */
+footer {
+    background-color: var(--footer-color-light);
+    padding: 15px 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* 暗模式页脚 */
+.darkMode footer {
+    background-color: var(--footer-color-dark);
+}
+
+footer .footerLeft,
+footer .footerRight {
+    font-size: 0.9rem;
+    white-space: nowrap; /* 禁止换行 */
+    overflow: hidden; /* 隐藏溢出部分 */
+    text-overflow: ellipsis; /* 超出部分显示省略号 */
+}
+
+footer .footerRight {
+    text-align: right;
+}
+
+/* 移动设备样式 */
+@media (max-width: 768px) {
+    .mainContent {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .mainContent .primaryContent,
+    .mainContent .secondaryContent {
+        width: 100% !important;
+    }
+}

@@ -1,5 +1,5 @@
 User-agent: *
 Disallow: /vocal-mtf-wiki/
 
-Sitemap: https://rainppr.github.io/blog/sitemap.xml
-Sitemap: https://rainppr.github.io/whk/sitemap.xml
+Sitemap: https://rainemtf.github.io/blog/sitemap.xml
+Sitemap: https://rainemtf.github.io/whk/sitemap.xml
