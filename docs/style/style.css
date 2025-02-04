@@ -3,7 +3,7 @@
     /* 亮模式 */
     --theme-color-light: #f4f4f4;
     --text-color-light: #000;
-    --highlight-color-light: #ddd;
+    --highlight-color-light: #444;
     --header-color-light: #d1d1d1;
     --footer-color-light: #d1d1d1;
     --card-background-light: #fff;
@@ -13,7 +13,7 @@
     /* 暗模式 */
     --theme-color-dark: #333;
     --text-color-dark: #fff;
-    --highlight-color-dark: #666;
+    --highlight-color-dark: #ddd;
     --header-color-dark: #222;
     --footer-color-dark: #222;
     --card-background-dark: #444;
@@ -183,10 +183,14 @@ footer {
 
 footer .footerLeft,
 footer .footerRight {
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
     font-size: 0.9rem;
-    white-space: nowrap; /* 禁止换行 */
-    overflow: hidden; /* 隐藏溢出部分 */
-    text-overflow: ellipsis; /* 超出部分显示省略号 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 footer .footerRight {
