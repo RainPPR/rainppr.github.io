@@ -3,22 +3,22 @@
     /* 亮模式 */
     --theme-color-light: #f4f4f4;
     --text-color-light: #000;
+    --highlight-color-light: #ddd;
     --header-color-light: #d1d1d1;
     --footer-color-light: #d1d1d1;
     --card-background-light: #fff;
     --card-border-light: #ddd;
     --card-text-light: #000;
-    --highlight-color-light: #8b0000;
 
     /* 暗模式 */
     --theme-color-dark: #333;
     --text-color-dark: #fff;
+    --highlight-color-dark: #666;
     --header-color-dark: #222;
     --footer-color-dark: #222;
     --card-background-dark: #444;
     --card-border-dark: #666;
     --card-text-dark: #fff;
-    --highlight-color-dark: #ff69b4;
 }
 
 /* 页面基础样式 */
@@ -113,6 +113,30 @@ section {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+}
+
+.mainContent a {
+    color: var(--text-color-light);
+}
+
+a:hover {
+    color: var(--highlight-color-light);
+}
+
+a:active {
+    color: var(--text-color-light);
+}
+
+.darkMode .mainContent a {
+    color: var(--text-color-dark);
+}
+
+.darkMode a:hover {
+    color: var(--highlight-color-dark);
+}
+
+.darkMode a:active {
+    color: var(--text-color-dark);
 }
 
 .contentCard {
