@@ -2,7 +2,7 @@
 
 export function Card({ data }) {
   return (
-    <div className="github-card">
+    <div className="github-card" href={data.html_url} target="_blank" rel="noopener noreferrer">
         <h4>{data.full_name}</h4>
         <p>Description: {data.description}</p>
     </div>
