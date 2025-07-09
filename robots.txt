@@ -1,5 +1,0 @@
-User-agent: *
-Disallow: /vocal-mtf-wiki/
-
-Sitemap: https://rainemtf.github.io/blog/sitemap.xml
-Sitemap: https://rainemtf.github.io/whk/sitemap.xml
