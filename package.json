@@ -1,6 +1,5 @@
 {
   "private": true,
-  "license": "MIT",
   "type": "module",
   "scripts": {
     "dev": "next",
@@ -11,15 +10,12 @@
   },
   "dependencies": {
     "@octokit/rest": "^22.0.0",
-    "console-table-printer": "^2.14.6",
-    "gray-matter": "^4.0.3",
     "next": "^15.3.5",
     "nextra": "^4.2.17",
     "nextra-theme-blog": "^4.2.17",
     "npm-check-updates": "^18.0.1",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "rss": "^1.2.2",
     "yarn": "^1.22.22"
   },
   "devDependencies": {
