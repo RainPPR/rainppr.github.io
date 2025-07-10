@@ -1,0 +1,139 @@
+/* === 容器样式 (已简化) === */
+.github-list {
+  /* 使用 flex 布局实现单列和间隙，比 margin 更优雅 */
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  /* 可选：限制最大宽度，在大屏幕上更好看 */
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* === 卡片样式 === */
+.github-card {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  border-radius: 12px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.1);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  /* 增加 overflow: hidden 来确保内容不会溢出圆角 */
+  overflow: hidden; 
+}
+
+.github-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* === 卡片内部结构 === */
+.card-header, .card-body, .card-footer {
+  padding: 16px;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 16px; /* 在 repo-name 和 fork-icon 之间增加间隙 */
+}
+
+.card-body {
+  flex-grow: 1; /* 保持 body 区域自适应高度 */
+}
+
+.card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.875em;
+  opacity: 0.8;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 16px; /* 在 last-updated 和 stats 之间增加间隙 */
+  /* 关键：禁止 footer 内容换行 */
+  flex-wrap: nowrap;
+}
+
+/* === Header 内容 (防换行修正) === */
+.repo-name-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* 关键：让容器占据多余空间，并能够收缩 */
+  flex-grow: 1;
+  min-width: 0; /* 允许 flex item 收缩到比其内容更小，这是 ellipsis 生效的关键 */
+}
+
+.repo-name {
+  font-weight: 600;
+  font-size: 1.1em;
+  /* 关键：用省略号处理过长文本 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.github-icon {
+  width: 1.2em;
+  height: 1.2em;
+  fill: currentColor;
+  /* 关键：防止图标在 flex 布局中被压缩 */
+  flex-shrink: 0; 
+}
+
+.fork-icon-container {
+  display: none;
+  flex-shrink: 0; /* 防止被压缩 */
+}
+
+.fork-icon {
+    width: 1em;
+    height: 1em;
+    fill: currentColor;
+    opacity: 0.7;
+}
+
+.github-card.is-fork .fork-icon-container {
+  display: block;
+}
+
+/* === Body 内容 === */
+.repo-description {
+  margin: 0;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+
+/* === Footer 内容 (防换行修正) === */
+.last-updated {
+  /* 关键：用省略号处理可能过长的更新时间文本 */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.repo-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  /* 关键：统计数据不收缩，优先显示它们 */
+  flex-shrink: 0; 
+}
+
+.stat-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.stat-icon {
+  width: 1em;
+  height: 1em;
+  fill: currentColor;
+}

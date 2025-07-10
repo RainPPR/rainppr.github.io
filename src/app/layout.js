@@ -31,8 +31,6 @@ export default async function RootLayout({ children }) {
             {new Date().getFullYear()} © RainPPR
             <a href="https://github.com/RainPPR/rainppr.github.io" style={{ float: 'right' }}>
               Github
-            </a> <a href="/feed.xml" style={{ float: 'right' }}>
-              RSS
             </a>
           </Footer>
         </Layout>

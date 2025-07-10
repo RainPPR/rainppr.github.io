@@ -1,5 +1,7 @@
 import { Octokit } from '@octokit/rest';
 import { Card } from './_card';
+import './card.css';
+import { Bleed } from 'nextra/components'
 
 const octokit = new Octokit();
 
@@ -35,8 +37,14 @@ async function fetchAndCombineAllRepos(usernames, orgnames) {
   const allPromises = [...userPromises, ...orgPromises];
   const results = await Promise.all(allPromises);
 
+        // stargazers_count : data.stargazers_count,
+        // watchers_count   : data.watchers_count,
+        // forks_count      : data.forks_count,
+
   const allRepos = results.flat();
-  allRepos.sort((a, b) => b.stargazers_count - a.stargazers_count);
+  allRepos.sort((a, b) => 
+    (b.stargazers_count + b.watchers_count + b.forks_count)
+  - (a.stargazers_count + a.watchers_count + a.forks_count));
 
   return allRepos;
 }
@@ -46,7 +54,7 @@ const combinedRepos = await fetchAndCombineAllRepos(USERNAMES, ORGNAMES);
 export async function GithubCard({ children }) {
   return (
     <div className="github-list">
-      <h3>{children}</h3>
+      <h2>来自「{children}」的仓库：</h2>
       {combinedRepos.map((item) => (
         <Card key={item.id} data={item} />
       ))}
