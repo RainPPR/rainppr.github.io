@@ -1,13 +1,63 @@
 ---
-title: Nextra Components
+title: Markdown Example
 date: 2023-05-15
-description: En example of using the Callout component in your blog.
-tags: [web development]
-author: Tristan Dubbeld
+description: An example of using markdown in your blog.
+tags: [example]
+author: RainPPR
 ---
 
 import { Bleed, Callout, Cards, FileTree, Steps, Tabs } from 'nextra/components'
 import { CopyIcon, GitHubIcon, MenuIcon } from 'nextra/icons'
+
+## Test `filename`, line highlighting and empty lines
+
+```js filename="test.js" {1}
+console.log('hello world')
+
+console.log('goodbye world')
+```
+
+## Test `showLineNumbers` and word highlighting
+
+```scala showLineNumbers {2-4} /println/
+object Hello {
+  def main(args: Array[String]) = {
+    println("hello, world")
+  }
+}
+
+object Hello {
+  def main(args: Array[String]) = {
+    println("hello, world")
+  }
+}
+```
+
+## Test highlighting inline code
+
+`import React from 'react'{:js}`
+
+## Test without specified language
+
+```text /hello/
+hello world
+```
+
+## Test with code block default language
+
+```
+const links = [
+  { href: '/settings', label: 'Settings' },
+  { href: '/support', label: 'Support' },
+  { href: '/license', label: 'License' },
+]
+```
+
+## Test link in code
+
+Link to [`google`](https://google.com)
+
+Link to [GitHub](https://github.com)
 
 ## `<Callout>`
 

@@ -3,7 +3,7 @@ import { PostCard } from 'nextra-theme-blog'
 import { getPosts, getTags } from './get-posts'
 
 export const metadata = {
-  title: '博客'
+  title: 'Posts'
 }
 
 export default async function PostsPage() {

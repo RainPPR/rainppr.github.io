@@ -4,7 +4,7 @@ import { getPosts, getTags } from '../../posts/get-posts'
 export async function generateMetadata(props) {
   const params = await props.params
   return {
-    title: `标签「${decodeURIComponent(params.tag)}」的博客`
+    title: `Tag「${decodeURIComponent(params.tag)}」`
   }
 }
 

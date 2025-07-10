@@ -1,6 +1,6 @@
 ---
 type: page
-title: 关于
+title: About
 date: 2025-07-16
 ---
 
