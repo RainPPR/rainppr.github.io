@@ -6,6 +6,10 @@ date: 2025-07-10
 
 ### 我是一名高中生。
 
+$$
+\KaTeX \text{test.}
+$$
+
 - 信息学博客：<https://raineblog.github.io/blog/>。
 
 - 文化课博客：<https://raineblog.github.io/whk/>。

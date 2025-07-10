@@ -1,4 +1,4 @@
-import nextra from 'nextra'
+import nextra from 'nextra';
 
 const withNextra = nextra({
   defaultShowCopyCode: true,
@@ -11,8 +11,23 @@ const withNextra = nextra({
       }
     }
   },
-  search: { codeblocks: false }
-})
+  search: { codeblocks: false },
+  latex: {
+    renderer: 'katex',
+    options: {
+      delimiters: [
+        { left: "$$", right: "$$", display: true },
+        { left: "$", right: "$", display: false },
+        { left: "\\(", right: "\\)", display: false },
+        { left: "\\[", right: "\\]", display: true }
+      ],
+      macros: {
+        "’": "'"
+      },
+      trust: true
+    }
+  }
+});
 
 export default withNextra({
   reactStrictMode: true,
@@ -20,8 +35,6 @@ export default withNextra({
   basePath: process.env.PAGES_BASE_PATH || '',
   output: 'export',
   images: {
-    unoptimized: true // mandatory, otherwise won't export
+    unoptimized: true
   }
-  // Optional: Change the output directory `out` -> `dist`
-  // distDir: "build"
-})
+});
