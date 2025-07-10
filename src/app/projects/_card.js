@@ -1,5 +1,3 @@
-'use client'
-
 export function Card({ data }) {
   return (
     <div className="github-card" href={data.html_url} target="_blank" rel="noopener noreferrer">

@@ -1,5 +1,3 @@
-'use client'
-
 import { Octokit } from '@octokit/rest';
 import { Card } from './_card';
 
@@ -43,9 +41,9 @@ async function fetchAndCombineAllRepos(usernames, orgnames) {
   return allRepos;
 }
 
-export async function GithubCard({ children }) {
-  const combinedRepos = await fetchAndCombineAllRepos(USERNAMES, ORGNAMES);
+const combinedRepos = await fetchAndCombineAllRepos(USERNAMES, ORGNAMES);
 
+export async function GithubCard({ children }) {
   return (
     <div className="github-list">
       <h3>{children}</h3>
