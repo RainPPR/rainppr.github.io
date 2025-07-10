@@ -6,4 +6,4 @@ date: 2021-03-18
 
 import { GithubCard } from './_custom'
 
-<GithubCard>Github</GithubCard>
+{typeof window === 'undefined' ? <GithubCard>Github</GithubCard> : null}
