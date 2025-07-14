@@ -2,7 +2,7 @@ import nextra from 'nextra';
 
 const withNextra = nextra({
   defaultShowCopyCode: true,
-  readingTime: true,
+  readingTime: false,
   mdxOptions: {
     rehypePrettyCodeOptions: {
       theme: {
