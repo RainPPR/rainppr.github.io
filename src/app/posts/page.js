@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { PostCard } from 'nextra-theme-blog'
 import { getPosts, getTags } from './get-posts'
+import 'katex/dist/katex.min.css';
 
 export const metadata = {
   title: 'Posts'
